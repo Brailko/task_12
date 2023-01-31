@@ -121,3 +121,4 @@ class EditProfilePageView(UpdateView):
 
 class EditProfilePageView(UpdateView):
  pass
+ pass
