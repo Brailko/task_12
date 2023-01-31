@@ -1,0 +1,17 @@
+{% extends 'posts/layout.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" value="Update">
+    </form>
+
+
+{% endblock %}

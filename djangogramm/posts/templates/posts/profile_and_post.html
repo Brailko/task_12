@@ -1,0 +1,45 @@
+{% extends "posts/layout.html" %}
+{% load static %}
+
+{% block title %}
+    {{ user.username }}
+{% endblock %}
+
+{% block content %}
+    <p>
+    <div class="profile_avatar">
+        {% if user.profile.avatar %}
+            <img src="{{user.profile.avatar.url}}" alt="Avatar">
+        {% else %}
+            <img src="{% static 'posts/images/grey_ava.jpg' %}" alt="Avatar">
+        {% endif %}
+    </div>
+    <div class="profile_info">
+        {{ user.username }}
+    </div>
+
+    <div>
+        {% if request.user.id == user.profile.id  %}
+            <a href="{% url 'user_profile' pk=user.pk %}"><button class="button">Дивитися профіль</button></a>
+        {% endif %}
+    </div>
+
+
+    <p></p>
+    <div class="profile_post">
+        {% for post in posts %}
+            <a href="{% url 'post' post.id %}"> <img class="img-article-center thumb" src="{{post.image.url}}"> </a>
+        {% endfor %}
+    </div>
+
+
+    </div>
+</p>
+
+
+
+
+
+
+{% endblock %}
+

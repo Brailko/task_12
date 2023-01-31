@@ -1,0 +1,19 @@
+{% extends 'posts/layout.html' %}
+
+{% block title %}
+    Головна сторінка
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h4>Recommendations for you</h4>
+        {% for u in users %}
+            <div class="recommendations">
+                <a href="{% url 'profile_and_post' u.username %}"> <img class="img-article-left thumb" src="{{u.avatar.url}}"> </a>
+                <a href="{% url 'profile_and_post' u.username %}"> {{ u.username }} </a>
+
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

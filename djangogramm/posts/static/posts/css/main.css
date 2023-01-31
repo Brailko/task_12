@@ -1,0 +1,150 @@
+body {
+    background: #FAFAFA;
+}
+
+aside {
+    float: left;
+    background: #FFFFFF;
+    width: 20%;
+    padding: 2.5%;
+    height: 100vw;
+    border-right: 5px solid #F2F2F2
+}
+
+aside img {
+    width:50px;
+    float: left;
+}
+
+aside .logo {
+    font-size: 25px;
+    margin-left: 0px;
+    font-weight: bold;
+    positive: relative;
+    top: 5px
+}
+
+aside ul {list-style: none}
+aside ul li {
+    color: #262626;
+    display: block;
+    margin-top: 20px;
+    transition: transform .6s easy;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: eb5959;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+main .features {
+    float: left;
+    margin-top: 10px;
+    text-align: center;
+    width: 75%;
+}
+
+main .features h1 {
+    font-size: 50px;
+}
+
+main .features p {
+    max-width: 400px;
+    margin: 20px auto
+}
+
+main .features ul {
+    list-style: none
+}
+
+main .features img {
+    width:50px;
+    border-radius: 40px;
+    float: left;
+}
+
+.recommendations {
+    float: left;
+    clear: both;
+    width: 400px;
+    margin: 7px 34%;
+    text-align: left;
+}
+
+.recommendations p {
+    margin: 10px;
+}
+
+.recommendations a {
+    text-decoration: none;
+    color: black
+}
+
+main .profile_avatar {
+    float: left;
+    margin-top: 15px;
+    border: 2px dashed #e03c32;
+    text-align: center;
+    width: 160px;
+    height: 160px;
+}
+
+main .profile_avatar img {
+    width: 150px;
+    border-radius: 100px;
+    float: center;
+    object-fit: cover;
+}
+
+main .profile_info {
+    color: blue;
+    margin-top: 15px;
+    border: 15px;
+    text-align: center;
+    border: 1px solid #888888;
+    height: 160px;
+}
+
+main .profile_post img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    padding: 10px; /* Расстояние от картинки до рамки */
+    margin-right: 6px; /* Отступ справа */
+    margin-bottom: 6px; /* Отступ снизу */
+
+}
+
+main .comments_photo img {
+    width: 50%;
+    object-fit: cover;
+    padding: 10px; /* Расстояние от картинки до рамки */
+    margin-right: 6px; /* Отступ справа */
+    margin-bottom: 6px; /* Отступ снизу */
+
+}
+
+.form-input {
+    width: 300px;
+    font-size: 16px;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: top;
+}
+
+.form-error ul {
+    list-style: none;
+    padding: 0;
+    color: #CC0000;
+}
+
+.form-button {
+    min-width: 200px;
+    font-size: 16px;
+}
+
+
