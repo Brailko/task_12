@@ -118,3 +118,6 @@ class EditProfilePageView(UpdateView):
     form_class = ProfileForm
 
     success_url = reverse_lazy('home')
+
+class EditProfilePageView(UpdateView):
+ pass
