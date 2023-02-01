@@ -25,10 +25,8 @@ SECRET_KEY = 'django-insecure-j!-82c2-%7n)hko1*j*mb50c&02ev*n(0i0k22e_(m2l4)%k6-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'www.djangogramm.pythonanywhere.com',
-    'djangogramm.pythonanywhere.com',
-]
+
+ALLOWED_HOSTS = []
 
 
 # Application definition
