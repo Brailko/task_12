@@ -20,13 +20,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-j!-82c2-%7n)hko1*j*mb50c&02ev*n(0i0k22e_(m2l4)%k6-'
+# SECRET_KEY = 'django-insecure-j!-82c2-%7n)hko1*j*mb50c&02ev*n(0i0k22e_(m2l4)%k6-'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-j!-82c2-%7n)hko1*j*mb50c&02ev*n(0i0k22e_(m2l4)%k6-')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['djangogramm.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -75,10 +78,21 @@ WSGI_APPLICATION = 'djangogramm.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+		'default': {
+      	'ENGINE': 'django.db.backends.postgresql',
+      	'HOST' : os.environ.get('POSTGRES_HOST', 'localhost'),
+      	'NAME': os.environ.get('POSTGRES_DB', 'db_name'),
+      	'USER': os.environ.get('POSTGRES_USER', 'username'),
+      	'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'password'),
+      	'PORT': os.environ.get('POSTGRES_PORT', '5432'),
     }
 }
 
